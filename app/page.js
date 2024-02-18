@@ -23,7 +23,14 @@ export default function Home() {
 
   return  (
     <div>
-      {loading ? <Loading /> : (
+      {loading ? 
+      <>
+      <Loading />
+      <div className='hidden'>
+        <BgVideo/>
+      </div>
+      </>
+      : (
         <div>
           <Menu/>
           <BgVideo/>
