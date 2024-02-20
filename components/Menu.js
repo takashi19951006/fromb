@@ -39,7 +39,7 @@ export function Menu() {
       <div onClick={toggleMenu}>
         {isOpen ?
         <>
-          <MenuContainer isOpen={isOpen} className="fixed h-screen w-[30%] z-10 bg-black bg-opacity-50 transition-right duration-500">
+          <MenuContainer isOpen={isOpen} className="fixed h-screen w-[40%] z-10 bg-black bg-opacity-50 transition-right duration-500">
             <ul className="flex flex-col justify-center items-center text-white text-xl">
               <li className="hover:bg-gray-500 mb-5 mt-12"><Link href={"#about"}>about</Link></li>
               <li className="hover:bg-gray-500 mb-5"><Link href={"#photo"}>photo</Link></li>
