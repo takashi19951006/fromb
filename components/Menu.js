@@ -37,21 +37,17 @@ export function Menu() {
   return (
     <>
       <div onClick={toggleMenu}>
-        {isOpen ?
-        <>
-          <MenuContainer isOpen={isOpen} className="fixed h-screen w-[40%] z-10 bg-black bg-opacity-50 transition-right duration-500">
-            <ul className="flex flex-col justify-center items-center text-white text-xl">
-              <li className="hover:bg-gray-500 mb-5 mt-12"><Link href={"#about"}>about</Link></li>
-              <li className="hover:bg-gray-500 mb-5"><Link href={"#photo"}>photo</Link></li>
-              <li className="hover:bg-gray-500 mb-5"><Link href={"#video"}>video</Link></li>
-              <li className="hover:bg-gray-500 mb-5"><Link href={"#contact"}>contact</Link></li>
-              <li className="hover:bg-gray-500 mb-5 mt-5"><IoMdClose/></li>
-            </ul>
-          </MenuContainer>
-        </>
-        :
-        <IoMdMenu className='fixed right-2 top-2 h-10 w-10 z-10 m-2 rounded-full'/>
-        }
+        <MenuContainer isOpen={isOpen} className="fixed h-screen md:w-[40%] lg:w-[30%]  z-10 bg-black bg-opacity-50">
+          <ul className="flex flex-col justify-center items-center text-white text-3xl h-[100%]">
+          <li className="hover:bg-gray-500 h-[10%]"></li>
+            <li className="hover:bg-gray-500 h-[10%]"><Link href={"#about"}>about</Link></li>
+            <li className="hover:bg-gray-500 h-[10%]"><Link href={"#photo"}>photo</Link></li>
+            <li className="hover:bg-gray-500 h-[10%]"><Link href={"#video"}>video</Link></li>
+            <li className="hover:bg-gray-500 h-[10%]"><Link href={"#contact"}>contact</Link></li>
+          </ul>
+        </MenuContainer>
+        {isOpen?<IoMdClose className="fixed right-2 top-2 h-10 w-10 z-10 m-2 rounded-full"/>:<IoMdMenu className='fixed right-2 top-2 h-10 w-10 z-10 m-2 rounded-full'/>
+}        
       </div>
     </>
   );
