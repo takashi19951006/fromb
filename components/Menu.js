@@ -37,7 +37,7 @@ export function Menu() {
   return (
     <>
       <div onClick={toggleMenu}>
-        <MenuContainer isOpen={isOpen} className="fixed h-screen md:w-[40%] lg:w-[30%]  z-10 bg-black bg-opacity-50">
+        <MenuContainer isOpen={isOpen} className="fixed h-screen  w-[40%] lg:w-[30%]  z-10 bg-black bg-opacity-50">
           <ul className="flex flex-col justify-center items-center text-white text-3xl h-[100%]">
           <li className="hover:bg-gray-500 h-[10%]"></li>
             <li className="hover:bg-gray-500 h-[10%]"><Link href={"#about"}>about</Link></li>
