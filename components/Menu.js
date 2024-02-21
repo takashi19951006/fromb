@@ -37,16 +37,16 @@ export function Menu() {
   return (
     <>
       <div onClick={toggleMenu}>
-        <MenuContainer isOpen={isOpen} className="fixed h-screen  w-[40%] lg:w-[30%]  z-10 bg-black bg-opacity-50">
-          <ul className="flex flex-col justify-center items-center text-white text-3xl h-[100%]">
-          <li className="hover:bg-gray-500 h-[10%]"></li>
+        <MenuContainer isOpen={isOpen} className="fixed h-screen  w-[40%] lg:w-[30%]  z-10 bg-black bg-opacity-70 transition-right duration-500">
+          <ul className="flex flex-col justify-end items-center text-white text-3xl h-[100%]">
             <li className="hover:bg-gray-500 h-[10%]"><Link href={"#about"}>about</Link></li>
             <li className="hover:bg-gray-500 h-[10%]"><Link href={"#photo"}>photo</Link></li>
             <li className="hover:bg-gray-500 h-[10%]"><Link href={"#video"}>video</Link></li>
             <li className="hover:bg-gray-500 h-[10%]"><Link href={"#contact"}>contact</Link></li>
+            <li className="hover:bg-gray-500 h-[10%]"></li>
           </ul>
         </MenuContainer>
-        {isOpen?<IoMdClose className="fixed right-2 top-2 h-10 w-10 z-10 m-2 rounded-full"/>:<IoMdMenu className='fixed right-2 top-2 h-10 w-10 z-10 m-2 rounded-full'/>
+        {isOpen?<IoMdClose className="fixed right-2 top-2 h-10 w-10 z-10 m-2 rounded-full text-white"/>:<IoMdMenu className='fixed right-2 top-2 h-10 w-10 z-10 m-2 rounded-full'/>
 }        
       </div>
     </>
