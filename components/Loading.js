@@ -5,53 +5,76 @@ const pulse = keyframes`
   0% {
     opacity: 0;
   }
-  
-  50% {
+  70% {
     opacity: 1;
   }
-  
   100% {
-    margin-top: -10em;
-    margin-left: -10em;
     opacity: 0;
-    height: 20em;
-    width: 20em;
+    width:20rem;
+    height:20rem;
   }
 `;
-
+const progress = keyframes`
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+` 
+const loading = keyframes`
+  10% {
+    transform: scale(1.1);
+  }
+` 
 // Styled Components
 const Circle = styled.div`
-  position: absolute;
   animation-iteration-count: infinite;
-  animation-duration: 1.7s;
-  animation-direction: forward;
+  animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-name: ${pulse};
-
-
-  &:after,
-  {
-    content: '';
-    width: 100%;
-    height: 100%;
-  }
-  &:after {
-    box-shadow: 10px 10px 500px #ddd;
-    position: absolute;
-    border-radius: 100%;
-    background-color: white;  
-  }
+  box-shadow: 10px 10px 1000px #ddd;
 `;
 
+const Progress = styled.div`
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-name: ${progress};
+`;
 
+const LoadingSpan= styled.span`
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-name: ${loading};
+  display: inline-block;
+`;
 
 export function Loading() {
+  const spans = [];
+  const text = "loading...";
+  for (let i = 0; i < text.length; i++) {
+    const delay = i * 0.1; // 遅延時間を計算する
+    spans.push(
+      <LoadingSpan
+        key={`loading-span-${i}`}
+        style={{ animationDelay: `${delay}s; font-size: 1.5rem;   font-weight: bold;` }}
+      >
+        {text[i]}
+      </LoadingSpan>
+    );
+  }
+
   return (
-    <div className='fixed flex justify-center items-center left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2'>
-      <div className="relative left-[50%] bg-red-500">
-        <Circle className="flex justify-center items-center  absolute" />
-      </div>
-      <h1 className='z-10'>Loading anime作成中</h1>
+    <div className='fixed flex justify-center items-center h-full w-full'>
+        <Circle className="relative w-[10rem] h-[10rem] bg-white rounded-full" />
+        <div className='absolute flex justify-center items-center flex-col'>
+          <div className="loading-area mb-5">
+          {spans}
+          </div>
+          <div className="w-[130px] h-[10px] bg-slate-500 relative rounded-full">
+            <Progress className="h-[100%] absolute bg-black rounded-full"/>
+          </div>
+        </div>
     </div>
   );
 }

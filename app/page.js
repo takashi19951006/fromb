@@ -16,26 +16,24 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
   return  (
-    <div>
+    <>
       {loading ? 
-      <>
       <Loading />
-      </>
       : (
-        <div>
+        <>
           <Menu/>
           <BgVideo/>
           <About/>
           <Photo/>
           <Video/>
           <Contact/>
-        </div>
+        </>
       )}
-    </div>
+    </>
   );
 }
