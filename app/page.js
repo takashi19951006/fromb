@@ -1,8 +1,7 @@
 'use client';
 import { Menu } from '@/components/Menu';
 import { About } from '@/components/About';
-import { Photo } from '@/components/Photo';
-import { Video } from '@/components/Video';
+import { Work } from '@/components/Work';
 import { Contact } from '@/components/Contact';
 import { BgVideo } from '@/components/BgVideo';
 import { Loading } from '@/components/Loading';
@@ -29,8 +28,7 @@ export default function Home() {
           <Menu/>
           <BgVideo/>
           <About/>
-          <Photo/>
-          <Video/>
+          <Work/>
           <Contact/>
         </>
       )}

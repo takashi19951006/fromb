@@ -2,10 +2,10 @@
 
 export function Contact() {
   return (
-    <section className='bg-blue-100 h-screen' id="contact">
+    <section className='bg-blue-100 h-screen w-full' id="Contact">
       <h1 className='text-5xl'>contact</h1>
       mail.jsを使って実際にメールが届く様にする
-      <form className="w-full">
+      <form className="w-[80%] flex flex-col justify-center items-center">
             <input
               type="text"
               id="name"
@@ -42,7 +42,6 @@ export function Contact() {
               </button>
             </div>
           </form>
-          <p>SNSもいろいろ書く</p>
     </section>
   );
 }

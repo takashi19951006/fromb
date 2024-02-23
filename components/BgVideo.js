@@ -26,11 +26,11 @@ export function BgVideo() {
         <source src="/video/bg_video.mp4" type="video/mp4" />
       </video>
       <div className="absolute inset-0 flex flex-col items-center justify-center text-6xl font-bold text-white">
-        <Image src="/assets/fromB_logo_trace.png" alt="Logo" width={200} height={200}/>
+        <Image src="/assets/fromB_logo_trace.png" alt="Logo" width={220} height={220}/>
       </div>
-      <BouncingDev className="absolute inset-0 flex flex-col items-center justify-end text-xl font-bold">
+      <BouncingDev className="absolute inset-0 flex flex-col items-center justify-end text-xl lg:text-2xl font-bold">
           Scroll
-          <dev className="flex justify-center text-4xl">
+          <dev className="flex justify-center text-4xl lg:text-5xl">
             <SlArrowDown/>
           </dev>
         </BouncingDev>
