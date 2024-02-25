@@ -57,8 +57,8 @@ export function Loading() {
     spans.push(
       <LoadingSpan
         key={`loading-span-${i}`}
-        style={{ animationDelay: `${delay}s; font-size: 1.5rem;   font-weight: bold;` }}
-      >
+        style={{ animationDelay: `${delay}s`, fontSize: '1.5rem', fontWeight: 'bold' }}
+        >
         {text[i]}
       </LoadingSpan>
     );
