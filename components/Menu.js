@@ -2,7 +2,6 @@ import Link from "next/link";
 import { useState } from 'react';
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import styled, { keyframes } from "styled-components";
-import { AiOutlineDoubleRight } from "react-icons/ai";
 
 const slideIn = keyframes`
   from {
@@ -37,7 +36,7 @@ export function Menu() {
   return (
     <>
       <div onClick={toggleMenu}>
-        <MenuContainer isOpen={isOpen} className="fixed h-screen  w-[40%] lg:w-[30%]  z-10 bg-black bg-opacity-70 transition-right duration-500">
+        <MenuContainer isOpen={isOpen} className="backdrop-blur-md fixed h-screen  w-[40%] lg:w-[30%]  z-10 bg-black bg-opacity-70 transition-right duration-500">
           <ul className="flex flex-col justify-end items-center text-white text-3xl h-[100%] w-full">
             {["About", "Work", "Contact"].map((section, index) => (
             <li

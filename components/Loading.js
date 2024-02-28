@@ -21,7 +21,17 @@ const progress = keyframes`
   100% {
     width: 100%;
   }
+  `
+
+const fadeOut = keyframes`
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
 ` 
+
 const loading = keyframes`
   10% {
     transform: scale(1.1);
@@ -37,9 +47,10 @@ const Circle = styled.div`
 `;
 
 const Progress = styled.div`
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-timing-function: ease-out;
   animation-name: ${progress};
+  animation-fill-mode:forwards;
 `;
 
 const LoadingSpan= styled.span`
@@ -48,6 +59,13 @@ const LoadingSpan= styled.span`
   animation-name: ${loading};
   display: inline-block;
 `;
+
+const FadeOutLoading = styled.div`
+  animation: ${fadeOut} 1s ease-in-out;
+  animation-delay: 2s;
+  animation-fill-mode:forwards;
+`;
+
 
 export function Loading() {
   const spans = [];
@@ -65,7 +83,7 @@ export function Loading() {
   }
 
   return (
-    <div className='fixed flex justify-center items-center h-full w-full'>
+    <FadeOutLoading className='fixed flex justify-center items-center h-full w-full'>
         <Circle className="relative w-[10rem] h-[10rem] bg-white rounded-full" />
         <div className='absolute flex justify-center items-center flex-col'>
           <div className="loading-area mb-5">
@@ -75,6 +93,6 @@ export function Loading() {
             <Progress className="h-[100%] absolute bg-gradient-to-r from-blue-700 to-red-700 rounded-full"/>
           </div>
         </div>
-    </div>
+    </FadeOutLoading>
   );
 }
