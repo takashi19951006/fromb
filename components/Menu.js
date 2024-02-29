@@ -2,7 +2,8 @@ import Link from "next/link";
 import { useState } from 'react';
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import styled, { keyframes } from "styled-components";
-
+import { FaInstagram } from "react-icons/fa";
+import { FiYoutube } from "react-icons/fi";
 const slideIn = keyframes`
   from {
     transform: translateX(100%);
@@ -46,7 +47,15 @@ export function Menu() {
               <Link href={`#${section}`}>{section}</Link>
             </li>
             ))}
-            <li className="h-[10%]"></li>
+
+            <li className="flex justify-center items-center mb-3">
+              <Link href="https://www.instagram.com/zakk__87/" target="_blank">
+                <FaInstagram className="m-3 hover:text-orange-500 hover:scale-110 transition-all duration-200"/>
+              </Link>
+              <Link href="https://www.youtube.com/@kazumoviefiles7653" target="_blank">
+                <FiYoutube className="m-3 hover:text-red-500 hover:scale-110 transition-all duration-200"/>
+              </Link>
+            </li>
           </ul>
         </MenuContainer>
         {

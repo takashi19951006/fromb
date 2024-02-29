@@ -90,7 +90,7 @@ export function Loading() {
           {spans}
           </div>
           <div className="w-[130px] h-[10px] bg-slate-500 relative rounded-full">
-            <Progress className="h-[100%] absolute bg-gradient-to-r from-blue-700 to-red-700 rounded-full"/>
+            <Progress className="h-[100%] absolute bg-blue-900 rounded-full"/>
           </div>
         </div>
     </FadeOutLoading>

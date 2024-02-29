@@ -61,10 +61,10 @@ const FadeInDev = styled.div`
 
 export function BgVideo() {
   return (
-    <section className="relative h-screen" id="home">
+    <section className="relative h-screen w-full" id="home">
       {/* 動画背景 */}
-      <FadeInvideo>
-      <video autoPlay loop muted className="fixed -z-10 inset-0 w-full object-cover h-screen" preload="auto">
+      <FadeInvideo className='fixed -z-10 w-full h-screen'>
+      <video autoPlay loop muted className=" inset-0 w-full object-cover h-screen" preload="auto">
         <source src="/video/bg_video.mp4" type="video/mp4" />
       </video>
       </FadeInvideo>
