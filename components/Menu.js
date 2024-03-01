@@ -50,10 +50,10 @@ export function Menu() {
 
             <li className="flex justify-center items-center mb-3">
               <Link href="https://www.instagram.com/zakk__87/" target="_blank">
-                <FaInstagram className="m-3 hover:text-orange-500 hover:scale-110 transition-all duration-200"/>
+                <FaInstagram className="m-3 hover:text-orange-500 hover:scale-110 transition-all duration-200 text-xl"/>
               </Link>
               <Link href="https://www.youtube.com/@kazumoviefiles7653" target="_blank">
-                <FiYoutube className="m-3 hover:text-red-500 hover:scale-110 transition-all duration-200"/>
+                <FiYoutube className="m-3 hover:text-red-500 hover:scale-110 transition-all duration-200 text-xl"/>
               </Link>
             </li>
           </ul>
