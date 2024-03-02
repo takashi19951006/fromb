@@ -18,13 +18,18 @@ export function Contact() {
 
   return (
     <section className='bg-gradient-to-l from-pink-200 to-blue-200 lg:h-screen w-full p-3'  id="Contact">
+      <h1 className="lg:bg-red-500">lgです</h1>
+      <h1 className="md:bg-red-500">mdです</h1>
+      <h1 className="sm:bg-red-500">smです</h1>
+      <h1 className="xs:bg-red-500">xsです</h1>
+
       <h1 className='text-5xl text-center m-2 text-gray-700'>Contact{isClicked}</h1>
       {/* カード */}
       <div className="lg:flex md:flex  justify-center items-center h-[70%] lg:w-[80%] md:w-[95%] m-auto bg-blue-50 rounded-md shadow-2xl">
-        <div className="flex justify-center items-center h-full lg:w-[50%]">
+        <div className="flex justify-center items-center h-full lg:w-[50%] md:w-[30%]">
           {/* 名刺 */}
-          <div className="m-5 flex justify-center items-center bg-white w-[80%] h-[50%] shadow-lg hover:shadow-2xl duration-500">
-            <div className="w-[80%]">
+          <div className="m-5 flex justify-center items-center bg-white lg:w-[80%] md:w-full sm:w-[40%] xs:w-[40%] lg:h-[50%] xs:py-10 xs:shadow-lg hover:shadow-2xl duration-500">
+            <div className="w-[300px]">
               <div className="flex justify-end">
               <Image src="/assets/fromB_logo_trace.png"
                 width={75}
@@ -71,27 +76,27 @@ export function Contact() {
               id="name"
               placeholder="お名前"
               name="name"
-              className="lg:w-[60%] md:w-[70%] text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:shadow-md focus:outline-slate-500"
+              className="w-full text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:shadow-md focus:outline-slate-500"
             />
             <input
               type="email"
               id="name"
               placeholder="ご自身のメールアドレス"
-              className="lg:w-[60%] md:w-[70%] text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:shadow-md focus:outline-slate-500"
+              className="w-full text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:shadow-md focus:outline-slate-500"
             />
             <input
               type="text"
               id="subject"
               placeholder="件名"
               name="subject"
-              className="lg:w-[60%] md:w-[70%] text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:shadow-md focus:outline-slate-500"
+              className="w-full text-gray-700 border border-slate-200 rounded py-3 px-4 mb-4 leading-tight focus:shadow-md focus:outline-slate-500"
             />
             <textarea
               name="message"
               id="message"
               placeholder="お問い合わせ内容"
               row={"7"}
-              className="lg:w-[60%] md:w-[70%] text-gray-700 border border-slate-200 rounded py-10 px-4 mb-4 focus:shadow-md focus:outline-slate-500"
+              className="w-full text-gray-700 border border-slate-200 rounded py-16 px-4 mb-4 leading-tight focus:shadow-md focus:outline-slate-500"
             />
             <div>
               {isClicked ?
