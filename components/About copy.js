@@ -1,13 +1,10 @@
-import { motion,animate } from "framer-motion"
-import Image from "next/image"
+import Image from 'next/image';
+import { motion, useAnimation } from 'framer-motion';
 
-export function About() {  
+export function About() {
   return (
-    <>
       <section className='bg-blue-200 h-screen' id="About">
-      <motion.button onClick={() => animate({ opacity: 0 })}  className="text-7xl bg-slate-500 rounded-xl text-white">Hellooooo</motion.button>
-
-      <div className='flex justify-center items-center h-screen'>
+      <div className='lg:flex xs:flex-col justify-center items-center h-screen'>
         <div className='lg:w-[30%] xs:w-full'>
         <h1 className='text-7xl font-bold '>About me</h1>
         <Image src="/assets/iam.png" alt="iam" width={300} height={500} className=''/>
@@ -31,6 +28,5 @@ export function About() {
         </div>
       </div>
       </section>
-    </>
-  )
+  );
 }

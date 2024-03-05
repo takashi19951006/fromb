@@ -4,6 +4,9 @@ import { FaInstagram } from "react-icons/fa";
 import { FiYoutube } from "react-icons/fi";
 import Image from "next/image";
 import { CiMail } from "react-icons/ci";
+import { motion } from "framer-motion"
+import { FaRegCheckCircle } from "react-icons/fa";
+
 
 export function Contact() {
 
@@ -18,17 +21,25 @@ export function Contact() {
 
   return (
     <section className='bg-gradient-to-l from-pink-200 to-blue-200 lg:h-screen w-full p-3'  id="Contact">
-      <h1 className="lg:bg-red-500">lgです</h1>
-      <h1 className="md:bg-red-500">mdです</h1>
-      <h1 className="sm:bg-red-500">smです</h1>
-      <h1 className="xs:bg-red-500">xsです</h1>
 
-      <h1 className='text-5xl text-center m-2 text-gray-700'>Contact{isClicked}</h1>
+      <motion.h1 
+      initial={{ opacity: 0, x: -50 }} 
+      whileInView={{ opacity: 1 , x:0 }} 
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}          
+      className='text-5xl text-center m-5 text-gray-700'>
+        Contact
+      </motion.h1>
       {/* カード */}
       <div className="lg:flex md:flex  justify-center items-center h-[70%] lg:w-[80%] md:w-[95%] m-auto bg-blue-50 rounded-md shadow-2xl">
         <div className="flex justify-center items-center h-full lg:w-[50%] md:w-[30%]">
           {/* 名刺 */}
-          <div className="m-5 flex justify-center items-center bg-white lg:w-[80%] md:w-full sm:w-[40%] xs:w-[40%] lg:h-[50%] xs:py-10 xs:shadow-lg hover:shadow-2xl duration-500">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.5 }} 
+            viewport={{ once: true }}          
+            className="m-5 flex justify-center items-center bg-white lg:w-[80%] md:w-full sm:w-[40%] xs:py-16 xs:w-[45%] lg:h-[50%] xs:shadow-lg hover:shadow-2xl duration-500">
             <div className="w-[300px]">
               <div className="flex justify-end">
               <Image src="/assets/fromB_logo_trace.png"
@@ -64,13 +75,32 @@ export function Contact() {
             </div>
             <div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
         {/* メールフォーム */}
-        <form className="m-5 lg:w-[50%] flex flex-col justify-center items-center">
-          <h1 className="text-xl text-gray-600 mb-1 "><CiMail className="inline text-2xl mb-1 mr-1" />Mail</h1>
-          <p className="mb-9  text-gray-600">XXやXXなどお気軽にお問い合わせください</p>
+        {isClicked ?
+        <motion.div
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1}} 
+        transition={{ duration: 2}} 
+        className="m-5 lg:w-[50%] lg:flex xs:flex-col justify-center items-center h-[300px]" >
+          <FaRegCheckCircle className="text-4xl text-green-500 mr-auto ml-auto"/>
+          <p className="text-2xl text-center">お問い合わせありがとうございます。</p>
+          <p className="text^xl text-center">XX日程度で返信させていただきます。
+          今しばらくおまちください。</p>
+        
+        </motion.div>
+
+        :
+        <motion.form
+          initial={{ opacity: 0, y: 10 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.5, delay: 0.5 }} 
+          viewport={{ once: true }}
+          className="m-5 lg:w-[50%] flex flex-col justify-center items-center">
+          <h1 className="text-xl text-gray-600 m-2 font-semibold"><CiMail className="inline text-2xl mr-1" />Mail</h1>
+          <p className="mb-9  text-gray-600">XXやXXなどご気軽にお問い合わせください</p>
             <input
               type="text"
               id="name"
@@ -99,22 +129,17 @@ export function Contact() {
               className="w-full text-gray-700 border border-slate-200 rounded py-16 px-4 mb-4 leading-tight focus:shadow-md focus:outline-slate-500"
             />
             <div>
-              {isClicked ?
-              <div
-              className="mb-3 flex justify-end bg-blue-500 text-white font-medium py-3 px-6 rounded hover:shadow"
-              >送信完了</div>
-                : 
-                <button
-                className="mb-3 flex justify-end bg-blue-500 text-white font-medium py-3 px-6 rounded hover:shadow hover:bg-blue-800 transition duration-500"
-                type="submit" onClick={handleClick}
-                >            
-                送信
-              </button>
-                }
-              
+            <button
+            className="mb-3 flex justify-end bg-blue-500 text-white font-medium py-3 px-6 rounded hover:shadow hover:bg-blue-800 transition duration-500"
+            type="submit" onClick={handleClick}
+            >            
+            送信
+            </button>
             </div>
-          </form>
+          </motion.form>
+                        }
           </div>
     </section>
   );
 }
+
