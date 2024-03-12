@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import { SlArrowDown } from "react-icons/sl";
 import styled, { keyframes } from "styled-components";
+import { LiaAngleDoubleDownSolid } from "react-icons/lia";
+import { scroll } from "framer-motion"
 
 // 上下のアニメーションを定義
 const bounce = keyframes`
@@ -27,7 +28,7 @@ const fadeIn = keyframes`
 `;
 const fadeInVideo = keyframes`
   from {
-    filter: blur(5px);
+    filter: blur(0px);
     opacity: 1;
 
   }
@@ -43,9 +44,10 @@ const Container = styled.div`
   animation: ${fadeIn} 1s ease-in-out;
   animation-delay: 3s;
   animation-fill-mode:forwards;
+
 `;
 const FadeInvideo = styled.div`
-  animation: ${fadeInVideo} 1s ease-in-out;
+animation: ${fadeInVideo} 1s ease-in-out;
   animation-delay: 3s;
   animation-fill-mode:forwards;
 `;
@@ -61,24 +63,24 @@ const FadeInDev = styled.div`
 
 export function BgVideo() {
   return (
-    <section className="relative h-screen w-full" id="home">
+    <section className="relative h-screen w-full" id="Home">
       {/* 動画背景 */}
       <FadeInvideo className='fixed -z-10 w-full h-screen'>
       <video autoPlay loop muted className=" inset-0 w-full object-cover h-screen" preload="auto">
         <source src="/video/bg_video.mp4" type="video/mp4" />
       </video>
       </FadeInvideo>
-      <Container className="absolute inset-0 flex flex-col items-center justify-center text-6xl font-bold text-white">
+      <Container className="inset-0 flex flex-col items-center justify-center text-6xl font-bold text-white absolute">
         <Image src="/assets/fromB_logo_trace.png" alt="Logo" width={220} height={220}/>
       </Container>
       <FadeInDev>
-      <BouncingDev className="absolute inset-0 flex flex-col items-center justify-end text-xl lg:text-2xl font-bold">
+      <BouncingDev className="inset-0 flex flex-col items-center justify-end text-xl lg:text-2xl  text-white absolute">
           Scroll
           <dev className="flex justify-center text-4xl lg:text-5xl">
-            <SlArrowDown/>
+            <LiaAngleDoubleDownSolid/>
           </dev>
         </BouncingDev>
         </FadeInDev>
-    </section>
+      </section>
   );
 }

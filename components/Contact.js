@@ -20,8 +20,12 @@ export function Contact() {
 
 
   return (
-    <section className='bg-gradient-to-l from-pink-200 to-blue-200 lg:h-screen w-full p-3'  id="Contact">
-
+    //<section className='bg-gradient-to-l from-pink-200 to-blue-200 lg:h-screen w-full p-3'  id="Contact">
+    <motion.section className='bg-gradient-to-l from-pink-200 to-blue-200 lg:h-screen w-full p-3'  id="Contact"
+    initial={{ opacity: 1 }} 
+    whileInView={{ opacity: 1 }} 
+    transition={{ duration: 0.5 }}
+    >
       <motion.h1 
       initial={{ opacity: 0, x: -50 }} 
       whileInView={{ opacity: 1 , x:0 }} 
@@ -31,15 +35,15 @@ export function Contact() {
         Contact
       </motion.h1>
       {/* カード */}
-      <div className="lg:flex md:flex  justify-center items-center h-[70%] lg:w-[80%] md:w-[95%] m-auto bg-blue-50 rounded-md shadow-2xl">
-        <div className="flex justify-center items-center h-full lg:w-[50%] md:w-[30%]">
+      <div className="lg:flex  justify-center items-center h-[70%] lg:w-[80%] bg-blue-50 m-auto z-50">
+        <div className="flex justify-center items-center h-full lg:w-[50%] md:w-[30%] m-auto">
           {/* 名刺 */}
           <motion.div
             initial={{ opacity: 0, y: 10 }} 
             whileInView={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5 }} 
             viewport={{ once: true }}          
-            className="m-5 flex justify-center items-center bg-white lg:w-[80%] md:w-full sm:w-[40%] xs:py-16 xs:w-[45%] lg:h-[50%] xs:shadow-lg hover:shadow-2xl duration-500">
+            className="m-5 flex justify-center items-center bg-white lg:w-[80%] md:w-full sm:w-[40%] xs:py-16 xs:w-[70%] lg:h-[50%] xs:shadow-lg hover:shadow-2xl duration-500">
             <div className="w-[300px]">
               <div className="flex justify-end">
               <Image src="/assets/fromB_logo_trace.png"
@@ -84,7 +88,7 @@ export function Contact() {
         initial={{ opacity: 0 }} 
         animate={{ opacity: 1}} 
         transition={{ duration: 2}} 
-        className="m-5 lg:w-[50%] lg:flex xs:flex-col justify-center items-center h-[300px]" >
+        className="m-5 lg:w-[50%] lg:flex xs:flex-col justify-center items-center h-[350px]" >
           <FaRegCheckCircle className="text-4xl text-green-500 mr-auto ml-auto"/>
           <p className="text-2xl text-center">お問い合わせありがとうございます。</p>
           <p className="text^xl text-center">XX日程度で返信させていただきます。
@@ -139,7 +143,7 @@ export function Contact() {
           </motion.form>
                         }
           </div>
-    </section>
+    </motion.section>
   );
 }
 

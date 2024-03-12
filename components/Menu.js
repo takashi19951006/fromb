@@ -39,7 +39,7 @@ export function Menu() {
       <div onClick={toggleMenu}>
         <MenuContainer isOpen={isOpen} className="backdrop-blur-md fixed h-screen  w-[40%] lg:w-[30%]  z-10 bg-black bg-opacity-70 transition-right duration-500">
           <ul className="flex flex-col justify-end items-center text-white text-3xl h-[100%] w-full">
-            {["About", "Work", "Contact"].map((section, index) => (
+            {["Work", "About", "Contact"].map((section, index) => (
             <li
               key={index}
               className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-red-500 hover:scale-110 h-[10%] w-full flex justify-center transition-all duration-200`}

@@ -5,6 +5,8 @@ import { Work } from '@/components/Work';
 import { Contact } from '@/components/Contact';
 import { BgVideo } from '@/components/BgVideo';
 import { Loading } from '@/components/Loading';
+import { Footer } from '@/components/Footer';
+import { Top } from '@/components/Top';
 import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from "styled-components";
 
@@ -42,12 +44,14 @@ export default function Home() {
       {loading ? 
       <Loading />
       : (
-        <FadeInDev>
+        <FadeInDev className='font-serif'>
           <Menu/>
           <BgVideo/>
-          <About/>
           <Work/>
+          <Top/>
+          <About/>
           <Contact/>
+          <Footer/>
         </FadeInDev>
       )}
     </>

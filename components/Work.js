@@ -1,65 +1,81 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
-import styled, { keyframes } from 'styled-components';
-
-const SlideContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const slideAnimation = keyframes`
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-`;
-
-const SlidingImage = styled(Image)`
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  transition: opacity 0.3s ease;
-  animation: ${slideAnimation} 0.3s ease;
-`;
+import { motion } from "framer-motion"
+import Image from "next/image";
+import Link from "next/link";
+import { FaRegCirclePlay } from "react-icons/fa6";
 
 export function Work() {
-  const slideData = [
-    {'src':"/assets/photo_0.jpg",'description':"知らんところの鳥居"},
-    {'src':"/assets/photo_1.jpg",'description':"インスタでたまに出てくる所"},
-    {'src':"/assets/photo_2.jpg",'description':"上高地の景色"},
-  ]
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % slideData.length);
-  };
-
-  const prevImage = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + slideData.length) % slideData.length);
-  };
 
   return (
     <>
-      <section className='h-screen w-full bg-slate-500' id="Work">
-        <h1 className='text-5xl text-center pt-4 text-white'>WORK</h1>
+      <section className='w-full bg-gradient-to-b from-transparent to-slate-600' >
+          <div className="h-[100vw]">
+          </div>  
 
-        {/* 作品一覧 */}
-        <div className='h-full flex items-center justify-center'>
-          <SlideContainer>
-            <SlidingImage
-              src={slideData[(currentIndex + slideData.length) % slideData.length]['src']}
-              width={700}
-              height={400}
-            />
-          </SlideContainer>
-          {/* 右画像 */}
-          <div className=''>
-            <h1 onClick={prevImage}>ああああ</h1>
+          <div className="lg:flex justify-center items-center" id="Work">
+            {/* セリフ部分 */}
+          <motion.p className='text-2xl text-center text-white xs:pb-32'
+            initial={{ opacity: 0, }} 
+            whileInView={{ opacity: 1 }} 
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}          
+          
+          >
+            思い出はあいうえお。<br/>
+            映像に残すことでかきくけことなります。<br/>
+            私はさしすせそをたちつてとをしていきます。
+          </motion.p>
+          {/* 動画紹介 */}
+          <div className="flex flex-col lg:w-[40%] xs:w-full">
+            <motion.div
+            initial={{ opacity: 0, }} 
+            whileInView={{ opacity: 1 }} 
+            transition={{ duration: 0.8 ,delay:2}}
+            viewport={{ once: true }}    
+            className="xs:w-[50%]"
+            >
+              <Link href="https://www.youtube.com/@kazumoviefiles7653" target="_blank">
+              <div className="m-5 lg:h-[15vw] lg:w-[25vw]  overflow-hidden relative flex items-center justify-center brightness-75
+                hover:brightness-100 duration-300 shadow-2xl border-t-[15px] border-b-[15px] border-black">
+                  <Image src='/assets/photo_0.jpg' width={500} height={500} />
+                  <FaRegCirclePlay className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl hover:text-black hover:scale-125 duration-300"/>
+                </div>              
+                </Link>
+
+            </motion.div>
+            <motion.div
+            initial={{ opacity: 0, }} 
+            whileInView={{ opacity: 1 }} 
+            transition={{ duration: 0.8 ,delay:2.5}}
+            viewport={{ once: true }}      
+            className="self-end xs:w-[50%]"    
+            >
+              <Link href="https://www.youtube.com/@kazumoviefiles7653" target="_blank">
+              <div className="m-5 lg:h-[15vw] lg:w-[25vw]  overflow-hidden relative flex items-center justify-center brightness-75
+                hover:brightness-100 duration-300 shadow-2xl border-t-[15px] border-b-[15px] border-black">
+                  <Image src='/assets/photo_1.jpg' width={500} height={500} />
+                  <FaRegCirclePlay className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl hover:text-black hover:scale-125 duration-300"/>
+                </div>              
+                </Link>
+            </motion.div>
+            <motion.div
+            initial={{ opacity: 0, }} 
+            whileInView={{ opacity: 1 }} 
+            transition={{ duration: 0.8 ,delay:3}}
+            viewport={{ once: true }}    
+            className="xs:w-[50%]"      
+            >
+              <Link href="https://www.youtube.com/@kazumoviefiles7653" target="_blank">
+              <div className="m-5 lg:h-[15vw] lg:w-[25vw]  overflow-hidden relative flex items-center justify-center brightness-75
+                hover:brightness-100 duration-300 shadow-2xl border-t-[15px] border-b-[15px] border-black">
+                  <Image src='/assets/photo_2.jpg' width={500} height={500} />
+                  <FaRegCirclePlay className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl hover:text-black hover:scale-125 duration-300"/>
+                </div>              
+                </Link>
+            </motion.div>          
           </div>
-        </div>
+          </div>
+          <div className="h-[50vw]">
+          </div>  
       </section>
     </>
   );
