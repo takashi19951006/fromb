@@ -31,7 +31,7 @@ export function Work() {
             whileInView={{ opacity: 1 }} 
             transition={{ duration: 0.8 ,delay:2}}
             viewport={{ once: true }}    
-            className="xs:w-[50%]"
+            className="xs:w-[80%]"
             >
               <Link href="https://www.youtube.com/@kazumoviefiles7653" target="_blank">
               <div className="m-5 lg:h-[15vw] lg:w-[25vw]  overflow-hidden relative flex items-center justify-center brightness-75
@@ -47,7 +47,7 @@ export function Work() {
             whileInView={{ opacity: 1 }} 
             transition={{ duration: 0.8 ,delay:2.5}}
             viewport={{ once: true }}      
-            className="self-end xs:w-[50%]"    
+            className="self-end xs:w-[80%]"    
             >
               <Link href="https://www.youtube.com/@kazumoviefiles7653" target="_blank">
               <div className="m-5 lg:h-[15vw] lg:w-[25vw]  overflow-hidden relative flex items-center justify-center brightness-75
@@ -62,7 +62,7 @@ export function Work() {
             whileInView={{ opacity: 1 }} 
             transition={{ duration: 0.8 ,delay:3}}
             viewport={{ once: true }}    
-            className="xs:w-[50%]"      
+            className="xs:w-[80%]"      
             >
               <Link href="https://www.youtube.com/@kazumoviefiles7653" target="_blank">
               <div className="m-5 lg:h-[15vw] lg:w-[25vw]  overflow-hidden relative flex items-center justify-center brightness-75

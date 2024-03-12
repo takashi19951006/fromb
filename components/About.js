@@ -17,10 +17,10 @@ export function About() {
             </motion.h1>
 
         <div className="flex justify-center  lg:h-full">
-          <div className="w-[70%]  p-10  ">
+          <div className="lg:w-[70%]  p-10  ">
             {/* 写真とプロフィールエリア */}
             <div className="lg:flex justify-center items-center">
-              <Image src="/assets/iam.png" alt="iam" width={300} height={500} className='rounded-md m-5 mt-10'/>
+              <Image src="/assets/iam.png" alt="iam" width={300} height={500} className='rounded-md lg:m-5 mt-10 xs:mr-auto xs:ml-auto xs:w-[80%]'/>
               {/* プロフィール */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }} 
